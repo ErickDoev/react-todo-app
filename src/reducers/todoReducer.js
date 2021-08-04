@@ -2,8 +2,8 @@ import { types } from "../types/types";
 
 const initialState = {
     todos:[],
-    // completedTodos:[],
-    // activeTodos:[],
+    renderTodos:[],
+    userAction:'all',
     active:null
 }
 
@@ -20,13 +20,6 @@ export const todoReducer = (state=initialState,action) => {
                 ...state,
                 active:action.payload
             }
-
-        // case types.todoComplete:
-        //     return{
-        //         ...state,
-        //         completedTodos:[...state.todos,action.payload]
-        //     }
-        
         case types.todoDelete:
             return{
                 ...state,
@@ -38,19 +31,57 @@ export const todoReducer = (state=initialState,action) => {
                 ...state,
                 active:null
             }
+        
+        case types.todoComplete:
+            return{
+                ...state,
+                todos:state.todos.map(
+                    todo => todo.id === action.payload.id
+                    ?{...todo,isCompleted:true}
+                    :todo)
+            }
 
-        // case types.todoCompleteDeleted:
-        //     return{
-        //         ...state,
-        //         completedTodos:state.completedTodos.filter(todo => todo.id !== action.payload)
-        //     }
+        case types.todoRenderAll:
+            return{
+                ...state,
+                renderTodos:[...state.todos]
+            }
 
-        // case types.todoAllCompleteDelete:
-        //     return{
-        //         ...state,
-        //         completedTodos:[]
-        //     }
-            
+        case types.todoRenderActive:
+            return{
+                ...state,
+                renderTodos:state.todos.filter(todo => todo.isCompleted === false)
+            }
+
+        case types.todoRenderComplete:
+            return{
+                ...state,
+                renderTodos:state.todos.filter(todo => todo.isCompleted === true)
+            }
+
+        case types.todoUserActive:
+            return{
+                ...state,
+                userAction:'actives'
+            }
+
+        case types.todoUserAll:
+            return{
+                ...state,
+                userAction:'all'
+            }
+
+        case types.todoUserComplete:
+            return{
+                ...state,
+                userAction:'completed'
+            }
+
+        case types.todoAllCompleteDelete:
+            return{
+                ...state,
+                todos:state.todos.filter(todo => todo.isCompleted === false)
+            }
     
         default:
             return state;

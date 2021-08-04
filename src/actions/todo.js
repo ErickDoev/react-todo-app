@@ -5,7 +5,8 @@ export const todoAddNew = (todo) => ({
     type:types.todoAdd,
     payload:{
         id: new Date().getTime(),
-        todo
+        todo,
+        isCompleted:false
     }
 });
 
@@ -37,3 +38,26 @@ export const todoClearAllComplete = () => ({
     type:types.todoAllCompleteDelete
 });
 
+export const todoRenderAll = () => ({
+    type:types.todoRenderAll
+});
+
+export const todoRenderActive = () => ({
+    type:types.todoRenderActive
+});
+
+export const todoRenderComplete = () => ({
+    type:types.todoRenderComplete
+});
+
+export const todoUserActionAll = () => ({
+    type:types.todoUserAll
+});
+
+export const todoUserActionActive = () => ({
+    type:types.todoUserActive
+});
+
+export const todoUserActionComplete = () => ({
+    type:types.todoUserComplete
+});

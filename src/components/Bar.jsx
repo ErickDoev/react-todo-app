@@ -1,10 +1,8 @@
 import React from 'react'
-import { useDispatch} from 'react-redux';
-import { todoClearAllComplete} from '../actions/todo';
+import { useDispatch, useSelector} from 'react-redux';
+import { todoClearAllComplete, todoUserActionActive,todoUserActionComplete,todoUserActionAll} from '../actions/todo';
 
 export const Bar = () => {
-
-
 
     const dispatch = useDispatch();
     
@@ -12,24 +10,31 @@ export const Bar = () => {
         dispatch(todoClearAllComplete());
     }
 
-    // const handleActiveTodos = () => {
-   
-    // }
+    const handleAllTodos = () => {
+        dispatch(todoUserActionAll());
+    }
 
-    // const handleCompleteTodos = () => {
-     
-    // }
+    const handleActiveTodos = () => {
+        dispatch(todoUserActionActive());
+    }
+
+    const handleCompleteTodos = () => {
+        dispatch(todoUserActionComplete());
+    }
+
+    const {todos} = useSelector(state => state.todos);
+
 
     return (
         <div className="todo-bar">
             <div className="flex-child">
-                <p>5 items left</p>
+                <p>{todos.length} items left</p>
             </div>
-            {/* <div className="flex-row flex-child">
-                <p>All</p>
+            <div className="flex-row flex-child">
+                <p onClick={handleAllTodos}>All</p>
                 <p onClick={handleActiveTodos}>Active</p>
                 <p onClick={handleCompleteTodos}>Completed</p>
-            </div> */}
+            </div>
             <div 
                 className="flex-child todo-clear"
                 onClick={handleClearAllCompletedTodos}>

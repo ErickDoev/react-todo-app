@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Bar } from './Bar'
+import { Bar } from './Bar'
 import { TodoInput } from './TodoInput'
 import { TodoList } from './TodoList'
 
@@ -12,6 +12,7 @@ export const TodoScreen = () => {
             </div>
             <TodoInput />
             <TodoList />
+            <Bar/>
             
         </div>
     )

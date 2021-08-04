@@ -9,5 +9,12 @@ export const types = {
     todoCompleteDeleted:'Todo Complete deleted',
     todoAllCompleteDelete:'All Todos Complete Deleted',
 
+    todoRenderAll:'All Todos Rendered',
+    todoRenderActive:'Active Todos Rendered',
+    todoRenderComplete:'Complete Todos Rendered',
+
+    todoUserAll:'User Action All',
+    todoUserActive:'User Action Active',
+    todoUserComplete:'User Action Complete'
 
 }
