@@ -1,3 +1,4 @@
+
 .container{
     width: 32.5rem;
 }
@@ -194,15 +195,14 @@
     width: 100%;
     height: 100vh;
     flex-direction: column;
-    //background-image: url(../assets/bg-desktop-light.jpg);
-    background-image: url("./assets/bg-desktop-light.jpg");
+    background-image: url(../assets/bg-desktop-light.jpg);
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: 100%;
     transition: .3s ease all;
     min-width: 400px;
     body.dark &{
-        background-image: url("./assets/bg-desktop-dark.jpg");
+        background-image: url("../assets/bg-desktop-dark.jpg");
     }
 }
 
@@ -242,12 +242,12 @@
 @media screen and (max-width:700px){
 
     .main{
-        background-image: url("./assets/bg-mobile-light.jpg");
+        // background-image: url("/assets/bg-mobile-light.jpg");
         background-size: 100%;
         width: 100%;
 
         body.dark &{
-            background-image: url("./assets/bg-mobile-dark.jpg");
+            // background-image: url("/assets/bg-mobile-dark.jpg");
         }
     }
 }
