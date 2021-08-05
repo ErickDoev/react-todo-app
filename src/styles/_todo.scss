@@ -4,7 +4,7 @@
 .todo-circle{
     align-items: center;
     background-color: white;
-    border: 2px solid $lightGrayishBlue;
+    border: 1px solid $veryLightGrayishBlue;
     border-radius: 100%;
     cursor: pointer;
     display: flex;
@@ -12,6 +12,17 @@
     justify-content: center;
     margin: 1.4rem;
     width: 1.5rem;
+    transition: .3s ease all;
+
+    body.dark &{
+        border: 1px solid $veryDarkGrayishBlue;
+        background-color: $veryDarkDesaturatedBlue;
+   
+        svg path{
+            transition: .3s ease all;
+            stroke: $veryDarkDesaturatedBlue;
+        }
+    }
 
 
     
@@ -42,6 +53,11 @@
     transition: 400ms;
     width: 32.5rem;
     margin-bottom: 1.5rem;
+    transition: .3s ease all;
+
+    body.dark &{
+        background-color: $veryDarkDesaturatedBlue;
+    }
 
 }
 
@@ -57,8 +73,12 @@
     border-radius: 5px;
     font-family:$josefin;
     caret-color: $brightBlue;
-
     font-size: 1.5rem;
+    transition: .3s ease all;
+
+    body.dark &{
+        background-color: $veryDarkDesaturatedBlue;
+    }
 
     &:focus{
         background-color: white;
@@ -76,10 +96,16 @@
     overflow: auto;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: .3s ease all;
+
+    body.dark &{
+        background-color: $veryDarkDesaturatedBlue;
+    }
 }
 
 .todo-form{
     width: 100%;
+
 }
 .todo-item{
     color: #07423C; 
@@ -99,6 +125,13 @@
     justify-content: space-between;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    transition: .3s ease all;
+
+    body.dark &{
+        background-color: $veryDarkDesaturatedBlue;
+        color: $darklightGrayishBlue;
+        border-bottom: 1px solid $veryDarkGrayishBlue;
+    }
 }
 
 .underlined{
@@ -130,6 +163,11 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
     width: 32.5rem;
+    transition: .3s ease all;
+
+    body.dark &{
+        background-color: $veryDarkDesaturatedBlue;
+    }
     
 
     p{
@@ -160,6 +198,11 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: 100%;
+    transition: .3s ease all;
+    min-width: 400px;
+    body.dark &{
+        background-image: url(../assets/bg-desktop-dark.jpg);
+    }
 }
 
 .todo-title{
@@ -172,4 +215,62 @@
 
 .p-active{
     color: $brightBlue !important;
+}
+
+@media screen and (max-width:1500px){
+
+    .main{
+        background-size: 130%;
+    }
+}
+
+@media screen and (max-width:1000px){
+
+    .main{
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width:800px){
+
+    .main{
+        background-size: 200%;
+    }
+}
+
+@media screen and (max-width:700px){
+
+    .main{
+        background-image: url(../assets/bg-mobile-light.jpg);
+        background-size: 100%;
+        width: 100%;
+
+        body.dark &{
+            background-image: url(../assets/bg-mobile-dark.jpg);
+        }
+    }
+}
+
+@media screen and (max-width:550px){
+
+    .main{
+        background-size: 150%;
+  
+    }
+
+    .flex-row-sp{
+        width: 90%;
+    }
+
+    .todo-input-content{
+        width: 90%;
+    }
+
+    .todo-list{
+        width: 90%;
+    }
+
+    .todo-bar{
+        width: 90%;
+    }
 }
