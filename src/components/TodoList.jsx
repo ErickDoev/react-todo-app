@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { todoRenderActive, todoRenderAll, todoRenderComplete } from '../actions/todo';
 
@@ -25,19 +25,16 @@ export const TodoList = () => {
     }, [userAction,todos,dispatch])
 
     return (
-        <>
-            <div className="todo-list">
-                {renderTodos.map(
-                    todo => 
-                    <TodoItem 
+
+        <div className="todo-list">
+            {renderTodos.map(todo =>
+                <TodoItem
                         key={todo.id} 
                         id={todo.id} 
                         todo={todo.todo}
                         isCompleted={todo.isCompleted}
-                    />)}   
-            </div>
-        
-        </>
-        
+                    />
+            )}
+        </div>         
     )
 }

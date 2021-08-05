@@ -1,7 +1,14 @@
 import { types } from "../types/types";
 
 const initialState = {
-    todos:[],
+    todos:[
+        {id:1628117238776,todo:'Complete online JavaScript course',isCompleted:true},
+        {id:1628117248821,todo:'Jog around the park 3x',isCompleted:false},
+        {id:1628117255256,todo:'10 minutes meditation',isCompleted:false},
+        {id:1628117262744,todo:'Read for 1 hour',isCompleted:false},
+        {id:1628117271462,todo:'Pick up groceries',isCompleted:false},
+        {id:1628117289442,todo:'Complete Todo App on Frontend mentor',isCompleted:false}
+    ],
     renderTodos:[],
     userAction:'all',
     active:null

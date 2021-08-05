@@ -1,6 +1,7 @@
-import React, { useState,useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { todoComplete, todoSetActive, todoDelete,todoRemoveActive} from '../actions/todo'
+import React, { useState,useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { todoComplete, todoSetActive, todoDelete,todoRemoveActive} from '../actions/todo';
 
 export const TodoItem = ({todo,id,isCompleted}) => {
 
@@ -31,6 +32,7 @@ export const TodoItem = ({todo,id,isCompleted}) => {
     }, [active?.id,id]);
 
     return (
+
         <div 
             className="todo-item"
             >
@@ -56,5 +58,6 @@ export const TodoItem = ({todo,id,isCompleted}) => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
                     </div>
         </div>
+        
     )
 }
